@@ -19,8 +19,8 @@ def load_model():
     return saved_model
 
 #+2
-# MODEL_FILEPATH = os.path.join(os.path.dirname(__file__),"..","..",".." "model", "model (3).p")
-MODEL_FILEPATH = '/Users/jasimrashid/Projects/DS/model/model (3).p'
+MODEL_FILEPATH = os.path.join(os.path.dirname(__file__),"..","..", "model", "model (3).p")
+# MODEL_FILEPATH = '/Users/jasimrashid/Projects/DS/model/model (3).p'
 lr = load_model()
 
 
