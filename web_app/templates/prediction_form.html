@@ -1,0 +1,36 @@
+{% extends "bootstrap_layout.html" %}
+
+{% block content %}
+
+    <h2>Prediction Time</h2>
+
+    <p>Use the form below to predict if a kickstarter proposal will meet its funding goal</p>
+
+    <form action="/predict_form" method="POST">
+
+        <label>Category</label>
+        <select name="category">
+            <option value="Software" selected="true">software</option>
+            <option value="Art">art</option>
+            <option value="Cooking">cooking</option>
+            <option value="Electronics">electronics</option>
+        </select>
+        <br>
+
+        <label>Summary of pitch:</label>
+        <input type="text" name="pitch" placeholder="i am the goose that lays golden eggs. fund me bro!" value="i am the goose that lays golden eggs. fund me bro!">
+        <br>
+
+        <label for="a">a (between 0 and 10):</label>
+        <input type="range" id="a" name="a" min="0" max="10">
+        <br>
+
+        <label for="b">b (between 0 and 100):</label>
+        <input type="range" id="b" name="b" min="0" max="100">
+        <br>
+
+        <button>Submit</button>
+
+    </form>
+
+{% endblock %}
