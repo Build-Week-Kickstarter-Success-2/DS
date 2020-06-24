@@ -1,5 +1,6 @@
-# twitoff-15
+# Kickstarter App - DS14/15 Build Week
 
+TODO: Refine this readme document
 ## Installation
 
 Download the repo and navigate there from the command line:
