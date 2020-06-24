@@ -2,10 +2,11 @@
 from flask import Flask, request, jsonify, Blueprint
 import os
 import pickle
-import joblib #TODO: retire this
+# import joblib #TODO: retire this
 import traceback
 import pandas as pd
 import numpy as np
+
 
 # TODO: congigure os path for models
 MODEL_FILEPATH = os.path.join(os.path.dirname(__file__),"..", "model", "model (3).p")
@@ -46,16 +47,16 @@ def predict_json():
         return ('No model here to use')
 
 # TRAIN AND SAVE MODEL AS A SERIALIZABLE FILE
-def train_and_save_model():
-    print("TRAINING THE MODEL...")
-    X, y = load_iris(return_X_y=True)
-    classifier = LogisticRegression() # for example
-    classifier.fit(X, y)
+# def train_and_save_model():
+#     print("TRAINING THE MODEL...")
+#     X, y = load_iris(return_X_y=True)
+#     classifier = LogisticRegression() # for example
+#     classifier.fit(X, y)
 
-    print("SAVING THE MODEL...")
-    with open(MODEL_FILEPATH, "wb") as model_file:
-        pickle.dump(classifier, model_file)
-    return classifier
+#     print("SAVING THE MODEL...")
+#     with open(MODEL_FILEPATH, "wb") as model_file:
+#         pickle.dump(classifier, model_file)
+#     return classifier
 
 # LOAD SERIALIZED MODEL
 def load_model():
