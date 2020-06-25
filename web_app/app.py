@@ -6,14 +6,16 @@ import pickle
 import traceback
 import pandas as pd
 import numpy as np
+import category_encoders
+
 
 
 # TODO: congigure os path for models
 MODEL_FILEPATH = os.path.join(os.path.dirname(__file__),"..", "model", "model (3).p")
 
-stats_routes = Blueprint("stats_routes", __name__)
+# stats_routes = Blueprint("stats_routes", __name__) #-3
 # Your API definition
-app = Flask(__name__)
+# app = Flask(__name__) #-4
 
 stats_routes = Blueprint("stats_routes", __name__)
 
@@ -45,6 +47,8 @@ def predict_json():
     else:
         print ('Train the model first')
         return ('No model here to use')
+
+
 
 # TRAIN AND SAVE MODEL AS A SERIALIZABLE FILE
 # def train_and_save_model():

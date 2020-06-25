@@ -11,6 +11,8 @@ pandas = "*"
 numpy = "*"
 scikit-learn = "*"
 category-encoders = "*"
+python-dotenv = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
