@@ -2,12 +2,9 @@
 
 {% block content %}
 
-    <h2>Results!</h2>
+    <h2>Outcome</h2>
 
-    <p> a: {{ b }} <br>
-        b: {{ b }} <br>
-        category: {{ category }} <br><br>
-
-        result = {{ result }} </p>
+    <p>Prediction: {{ prediction }}<br>
+        The probability of getting funded = {{ prediction_proba }}</p>
 
 {% endblock %}

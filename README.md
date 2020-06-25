@@ -1,6 +1,6 @@
 # Kickstarter App - DS14/15 Build Week
 
-TODO: Refine this readme document
+TODO: Refine this readme document + TODO!
 ## Installation
 
 Download the repo and navigate there from the command line:
@@ -17,7 +17,7 @@ Setup a virtual environment and install required packages
 ```sh
 pipenv --python 3.7
 pipenv shell
-pipenv install Flask pandas numpy
+pipenv install Flask pandas numpy scikit-learn python-dotenv gunicorn category_encoders
 
 ```
 
