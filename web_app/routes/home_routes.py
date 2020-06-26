@@ -63,9 +63,8 @@ def predict_html():
     #TODO: form design slider shows values for
     prediction = list(lr.predict(df_row))
     prediction_proba = list(lr.predict_proba(df_row))
-    prediction_text = "Success" if prediction == 'True' else "Fail"
+    prediction_text = "Success" if prediction[0] == 1 else "Fail"
     print(jsonify(prediction = str(prediction), prediction_proba=prediction_proba[0][1]))
-    # breakpoint()
     # return jsonify(features = df_row_dict, prediction = str(prediction), prediction_proba=prediction_proba[0][1])
     return render_template("prediction_results.html", features = df_row_dict, prediction = str(prediction_text), prediction_proba=prediction_proba[0][1])
 
