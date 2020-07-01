@@ -6,8 +6,8 @@ TODO: Refine this readme document
 Download the repo and navigate there from the command line:
 
 ```sh
-git clone git@github.com:s2t2/twitoff-15.git
-cd twitoff-15
+git clone https://github.com/Build-Week-Kickstarter-Success-2/DS.git
+cd kickstarter
 ```
 
 ## Setup
@@ -17,7 +17,7 @@ Setup a virtual environment and install required packages
 ```sh
 pipenv --python 3.7
 pipenv shell
-pipenv install Flask pandas numpy
+pipenv install Flask pandas numpy scikit-learn python-dotenv gunicorn category_encoders
 
 ```
 
@@ -25,26 +25,40 @@ pipenv install Flask pandas numpy
 
 ## Run the Flask app locally
 
-Via forms
+Load web app:
 
 ```sh
 FLASK_APP=web_app flask run
 ```
-Via API
-
+Test API
+- Go to this link https://reqbin.com/ to submit post request to API
+- Paste https://ks-ds-15.herokuapp.com/predict and select ‘POST’
+Navigate to the Content tab. enter the following JSON input, and click Send
 ```sh
-python web_app/app.py
-```
-Test the API by running a post request on 'localhost:12345/predict' with the following input
-```sh
-[
-    {"category": "software", "pitch": "i am the goose that lays golden eggs", "a": 1, "b": 20}
+{
+    "category": {
+        "0": "Animation"
+    },
+    "staff_pick": {
+        "0": false
+    },
+    "description_leng": {
+        "0": 99
+    },
+    "usd_goal": {
+        "0": 30000
+    },
+    "cam_length": {
+        "0": 60
+    }
+}
 ]
 ```
 Output should be in the following format
 ```
 {
-  "prediction": "[1]"
+    "prediction": "[False]",
+    "prediction_proba": 0.14
 }
 ```
 
